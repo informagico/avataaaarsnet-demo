@@ -13,3 +13,7 @@ In any case you can also compile the .dll file from the linked repository (adjus
 ## Note
 
 In this demo I use [MaterialDesignInXAML](https://github.com/MaterialDesignInXAML) for a better UI
+
+## Warning
+
+Sometimes https://avataaars.io is not properly working or it may crash, be patience while I figure out a solution for that

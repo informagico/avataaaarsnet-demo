@@ -7,7 +7,7 @@ using System.Windows;
 using AvataaarsNet.Models;
 using Newtonsoft.Json;
 
-namespace AvataaarNetDemo
+namespace AvataaarsNetDemo
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
