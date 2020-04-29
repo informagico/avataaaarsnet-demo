@@ -1,0 +1,67 @@
+﻿<Window
+	x:Name="MyWindow"
+	x:Class="AvataaarNetDemo.MainWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:AvataaarNetDemo"
+	xmlns:avataaarsnet="clr-namespace:AvataaarsNet;assembly=AvataaarsNet"
+	mc:Ignorable="d"
+	Title="MainWindow"
+	Height="800"
+	Width="800">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition></ColumnDefinition>
+			<ColumnDefinition
+				Width="auto"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+
+		<avataaarsnet:AvataaarsGenerator
+			Background="AliceBlue"
+			Padding="32"
+			Grid.Column="0"
+			x:Name="Avataaaars"
+			Avatar="{Binding Path=Avatar, ElementName=MyWindow, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
+			Configuration="{Binding Path=Configuration, ElementName=MyWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+			EnableWidth="{Binding Path=EnableWidth, ElementName=MyWindow, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+
+		<StackPanel
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			Grid.Column="1">
+
+			<DockPanel
+				Margin="16 4">
+				<TextBlock>Enable width</TextBlock>
+				<ToggleButton
+					IsChecked="{Binding Path=EnableWidth}"></ToggleButton>
+			</DockPanel>
+
+			<Button
+				Margin="16 4"
+				Width="175"
+				x:Name="RandomizeConfig"
+				Click="RandomizeConfig_Click">Randomize</Button>
+
+			<Button
+				Margin="16 4"
+				Width="175"
+				x:Name="SaveFile"
+				Click="SaveFile_Click">Save File as .png</Button>
+
+			<Button
+				Margin="16 4"
+				Width="175"
+				x:Name="SaveConfig"
+				Click="SaveConfig_Click">Save Configuration</Button>
+
+			<Button
+				Margin="16 4"
+				Width="175"
+				x:Name="LoadConfig"
+				Click="LoadConfig_Click">Load Configuration</Button>
+		</StackPanel>
+	</Grid>
+</Window>
